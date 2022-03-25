@@ -1,0 +1,114 @@
+﻿@page
+@model estoreWebApplication.Pages.GalleryModel
+@{
+    ViewData["Title"] = "Photo Gallery";
+}
+
+<div class="container-fluid bg-secondary text-white mb-4 shadow rounded">
+    <div class="container p-5">
+        <h1 class="display-4">Gallery of Ideas</h1>
+        <hr>
+        <h5>Get inspiration from our photo gallery.</h5>
+    </div>
+</div>
+
+<div id="image-gallery" class="text-center m-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="image_1" class="card shadow rounded">
+                <div class="card-header">
+                    <h3>Canopy</h3>
+                </div>
+                <div class="card-body">
+                    <img class="img-fluid" src="img/gallery_1.jpg" />
+                </div>
+            </div>
+            <div id="image_2" class="card shadow rounded">
+                <div class="card-header">
+                    <h3>Work Bench</h3>
+                </div>
+                <div class="card-body">
+                    <img class="img-fluid" src="img/gallery_2.jpg" />
+                </div>
+            </div>
+            <div id="image_3" class="card shadow rounded">
+                <div class="card-header">
+                    <h3>Sofa</h3>
+                </div>
+                <div class="card-body">
+                    <img class="img-fluid" src="img/gallery_3.jpg" />
+                </div>
+            </div>
+            <div id="image_4" class="card shadow rounded">
+                <div class="card-header">
+                    <h3>Plant Cage</h3>
+                </div>
+                <div class="card-body">
+                    <img class="img-fluid" src="img/gallery_4.jpg" />
+                </div>
+            </div>
+            <div id="image_5" class="card shadow rounded">
+                <div class="card-header">
+                    <h3>Light Stand</h3>
+                </div>
+                <div class="card-body">
+                    <img class="img-fluid" src="img/gallery_5.jpg" />
+                </div>
+            </div>
+            <div id="image_6" class="card shadow rounded">
+                <div class="card-header">
+                    <h3>Greenhouse</h3>
+                </div>
+                <div class="card-body">
+                    <img class="img-fluid" src="img/gallery_6.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="gallery-controller" class="alert alert-info">
+        <ul>
+            <li><a onclick="showImage(1)" href="#image-gallery">1</a></li>
+            <li><a onclick="showImage(2)" href="#image-gallery">2</a></li>
+            <li><a onclick="showImage(3)" href="#image-gallery">3</a></li>
+            <li><a onclick="showImage(4)" href="#image-gallery">4</a></li>
+            <li><a onclick="showImage(5)" href="#image-gallery">5</a></li>
+            <li><a onclick="showImage(6)" href="#image-gallery">6</a></li>
+        </ul>
+    </div>
+
+</div>
+
+@section Scripts {
+<script>
+
+    showImage(1);
+
+     function getGalleryNavList() {
+
+         var div_gallery = document.getElementById('gallery-controller');
+         var nav_list = div_gallery.getElementsByTagName("ul")[0];
+
+         return nav_list;
+     }
+
+     function hideAllImages() {
+
+         var nav_list = getGalleryNavList();
+
+         for (i = 1; i < 7; i++) {
+             document.getElementById('image_' + i).style.display = 'none';
+             nav_list.getElementsByTagName("li")[i - 1].style.fontWeight = '400';
+         }
+     }
+
+     function showImage(i) {
+
+         hideAllImages();
+         var nav_list = getGalleryNavList();
+         nav_list.getElementsByTagName("li")[i - 1].style.fontWeight = '800';
+         document.getElementById('image_' + i).style.display = 'block';
+     }
+
+</script>
+}

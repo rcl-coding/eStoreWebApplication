@@ -16,3 +16,13 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+#gallery-controller {
+    clear: both;
+    font-size: 16px;
+    padding: 10px;
+}
+
+#gallery-controller li {
+        display: inline;
+}

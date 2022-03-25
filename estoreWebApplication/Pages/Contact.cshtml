@@ -1,0 +1,65 @@
+﻿@page
+@model estoreWebApplication.Pages.ContactModel
+@{
+    ViewData["Title"] = "Photo Gallery";
+}
+
+<div class="container-fluid bg-secondary text-white mb-4 shadow rounded">
+    <div class="container p-5">
+        <h1 class="display-4">Contact Us</h1>
+        <hr>
+        <h5>We woul love to hear from you.</h5>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card box-shadow rounded">
+            <div class="card-header">
+                <ul>
+                    <li>You can reach us at email at : <a href="mailto:someone@yoursite.com">pidreams@mail.com</a></li>
+                    <li>Reach us any by phone at : <strong>123-4567</strong></li>
+                </ul>
+            </div>
+            <div class="card body">
+                <img class="img-fluid" src="~/img/contact.jpg" />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card shadow rounded">
+            <div class="card-header">
+                <h3>Send us a message</h3>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Contact.Name" class="control-label"></label>
+                        <input asp-for="Contact.Name" class="form-control" />
+                        <span asp-validation-for="Contact.Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.Email" class="control-label"></label>
+                        <input asp-for="Contact.Email" class="form-control" />
+                        <span asp-validation-for="Contact.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Contact.Message" class="control-label"></label>
+                        <textarea asp-for="Contact.Message" class="form-control" style="height:150px"></textarea>
+                        <span asp-validation-for="Contact.Message" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="submit" value="Submit" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

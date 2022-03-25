@@ -1,0 +1,41 @@
+﻿@page
+@model estoreWebApplication.Pages.ShopModel
+@{
+    ViewData["Title"] = "Shop";
+}
+
+<div class="container-fluid bg-secondary text-white mb-4 shadow rounded">
+    <div class="container p-5">
+        <h1 class="display-4">Shop for pipe fittings</h1>
+        <hr>
+        <h5>Our affordable line up of galvanize pipe fittings and accessories allow you to take ordinary inexpensive galvanize pipe and build anything!</h5>
+    </div>
+</div>
+
+<div class="row">
+    @if (Model?.Products?.Count > 0)
+    {
+        foreach (var item in Model.Products)
+        {
+            <div class="col-md-4 text-center">
+                <div class="card shadow rounded">
+                    <div class="card-header" style="height:60px">
+                        <strong>@item.Name</strong>
+                    </div>
+                    <div class="card-body" style="height:350px">
+                        <img src="@item.ImageName" height="120" />
+                        <p class="mt-3"><a class="btn btn-success" asp-page="/Orders/Create" asp-area="Customer" asp-route-productid="@item.Id">Oder Now &raquo;</a></p>
+                        <p>@item.Description</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="badge rounded-pill bg-danger"><h6>$@item.Cost</h6></span>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p>There are no products to display</p>
+    }
+</div>

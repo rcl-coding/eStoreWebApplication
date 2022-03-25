@@ -6,36 +6,79 @@
 
 <div class="container-fluid bg-dark text-light mb-4 shadow rounded">
     <div class="container p-5">
-        <h1 class="display-4">Contoso Electronics</h1>
+        <h1 class="display-4">Pipe Dreams</h1>
         <hr>
-        <h5>We sell the most affordable and highest quality electronic devices.</h5>
+        <h5>Build anything you can dream of with Galvanize Pipe.</h5>
     </div>
 </div>
 
+<div class="text-center m-5">
+    <img class="img-fluid" src="img/banner.jpg" />
+</div>
+
 <div class="row">
-    @if (Model?.Products?.Count > 0)
-    {
-        foreach (var item in Model.Products)
-        {
-            <div class="col-md-4 text-center">
-                <div class="card shadow rounded">
-                    <div class="card-header" style="height:60px">
-                        <strong>@item.Name</strong>
-                    </div>
-                    <div class="card-body" style="height:350px">
-                        <img src="@item.ImageName" height="120" />
-                        <p class="mt-3"><a class="btn btn-success" asp-page="/Orders/Create" asp-area="Customer" asp-route-productid="@item.Id">Oder Now &raquo;</a></p>
-                        <p>@item.Description</p>
-                    </div>
-                    <div class="card-footer">
-                        <span class="badge rounded-pill bg-danger"><h6>$@item.Cost</h6></span>
-                    </div>
-                </div>
+    <div class="col-md-6">
+        <div class="card box-shadow rounded">
+            <div class="card-header bg-light">
+                <h3>OUR CONNECTORS</h3>
             </div>
-        }
-    }
-    else
-    {
-        <p>There are no products to display</p>
-    }
+            <div class="card-body">
+                <img class="img-fluid" src="img/connector.jpg" />
+            </div>
+            <div class="card-footer">
+                Galvanized steel pipe is strong and trusted by builders. It's readily available in your local hardware or home improvement store.
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card box-shadow rounded">
+            <div class="card-header bg-light">
+                <h3>GALVANIZE PIPE</h3>
+            </div>
+            <div class="card-body">
+                <img class="img-fluid" src="img/pipe.jpg" />
+            </div>
+            <div class="card-footer">
+                Steel pipe connectors that turns ordinary galvanize pipe into an affordable building platform with endless possibilities.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card box-shadow rounded">
+            <div class="card-header bg-success text-light">
+                <h3>EASY</h3>
+            </div>
+            <div class="card-body" style="height:200px">
+                Building with conduit and Maker Pipe is easy because you don't need any special tools or skills. A 5mm hex wrench is all it takes to make a connection. Conduit can be cut with a simple hand held metal pipe cutter.
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card box-shadow rounded">
+            <div class="card-header bg-success text-light">
+                <h3>AFFORDABLE</h3>
+            </div>
+            <div class="card-body" style="height:200px">
+                Cost shouldn't hold your DIY project back. That's why we designed our affordable connectors to pair with inexpensive galvanize pipe. This means you get to save money while making your DIY dream a reality.
+            </div>
+        </div>
+    </div>
+        <div class="col-md-4">
+        <div class="card box-shadow rounded">
+            <div class="card-header bg-success text-light">
+                <h3>STRONG</h3>
+            </div>
+            <div class="card-body" style="height:200px">
+                Just because it's easy and affordable doesn't mean you have to compromise strength. Metal conduit and our Maker Pipe fittings are made of durable steel so you can build with confidence indoors and out.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-5 text-center">
+    <img class="img-fluid" src="img/banner-bottom.jpg" />
 </div>
